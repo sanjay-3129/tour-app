@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <title> Responsive Contact Us Form  | CodingLab </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fontawesome CDN Link -->
+    <title>Tourin</title>
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- owl carousel - app screenshots -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://themes.audemedia.com/html/goodgrowth/css/owl.theme.default.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/owl.carousel.min.js"></script>
+  
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+/>
+
+  
+  <link rel="stylesheet" href="aboutus.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://smtpjs.com/v3/smtp.js"></script>  
+  <script type="text/javascript">
+  
+  
+  
+  const validateEmail = (inputmail) => {
+      return inputmail.match(
+        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+      // jagadish@gmail.com
+      // for(let i=0; i)
+  }
+  
+    function sendEmail() {
+      const toAddress = document.getElementById('inputmail').value;
+      const body = document.getElementById('body').value;
+  
+      // email validation - @ and .
+      const isValidEmail = validateEmail(toAddress);
+      if(!isValidEmail) {
+        alert('InValid Email...');
+        return;
+      } 
+      // body validation - should not be empty
+      if(body === "") {
+        alert('InValid body...');
+        return;
+      }
+    Email.send({
+     Host: "smtp.gmail.com",
+    Username : "askustour@gmail.com",
+     Password : "Letstravel123!",
+    To : toAddress,
+     From : "askustour@gmail.com",
+     Subject : "tourin.eliteclicksapp.com",
+     Body : body,
+     }).then(
+       message => alert("mail sent successfully", message)
+     ).catch(e => console.log('error', e));
+  }
+  </script>
+  </head>
+
+
+  <body>
+      <header>
+          <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand" href="#"> <img src="images/logo.png" alt="" class="Logo-img"  > </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-end"
+              id="navbarSupportedContent"
+            >
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link text-capitalize text-dark" href="/index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-capitalize text-dark" href="/aboutus.html">
+                    About Us
+                  </a>
+                </li>
+                <li class="nav-item
+                ">
+                    <a
+                      class="nav-link  text-capitalize text-dark"
+                      href="/image.html"
+                   
+                    >
+                    Upload Places </a></li>
+                  
+                <li class="nav-item">
+                  <a class="nav-link text-capitalize text-dark" href="/contact.html">Contact</a>
+                </li>
+                
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <section class="mt-5 pt-5">
+
+            <section class="testimonials">
+                <div class="container">
+              
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div id="customers-testimonials" class="owl-carousel">
+              
+                          <!--TESTIMONIAL 1 -->
+                          <div class="item">
+                            <div class="shadow-effect">
+                              <img class="img-circle" src="images/businessman.png" alt="">
+                              <h5>Research Analyst</h5>
+                              <p>Work hard in researching, collecting, analysing, and interpreting data, and using the data to make sure only the best tourist sites are selected and featured on our application. We want you to know that when you are using our mobile application, you are seeing only the best of what the world has to offer in terms of tourist destinations.
+                                </p>
+                            </div>
+                            <div class="testimonial-name">
+                              <a href="/"  <i class="fab fa-facebook"></i></a>
+                              <a href="/"  <i class="fab fa-instagram"></i></a>
+                            </div>
+                          </div>
+                          <!--END OF TESTIMONIAL 1 -->
+                          <!--TESTIMONIAL 2 -->
+                          <div class="item">
+                            <div class="shadow-effect">
+                              <img class="img-circle" src="images/businessman.png" alt="">
+                               <h5>Software Experts</h5>
+                               <p>We value our customers more than anything else. Our diligent team of software developers is constantly working hard to ensure a smooth user experience for you and working on updates and features to improve it even further. </p>
+                            </div>
+                            <div class="testimonial-name"> 
+                              <a href="/"  <i class="fab fa-facebook"></i></a>
+                              <a href="/"  <i class="fab fa-instagram"></i></a></div>
+                          </div>
+                          <!--END OF TESTIMONIAL 2 -->
+                          <!--TESTIMONIAL 3 -->
+                          <div class="item">
+                            <div class="shadow-effect">
+                              <img class="img-circle" src="images/businessman.png" alt="">
+                               <h5>Product Analyst</h5>
+                               <p>Our team of product analysts analyzes the user feedback and ensures the best UI experience for our customers. Optimization of the product is a continuous process, and we are always striving to make it better. Our consistent quality standards help us build greater customer trust and loyalty.</p>
+                            </div>
+                            <div class="testimonial-name">
+                               <a href="/"  <i class="fab fa-facebook"></i></a>
+                              <a href="/"  <i class="fab fa-instagram"></i></a></div>
+                          </div>
+                          <!--END OF TESTIMONIAL 3 -->
+                          <!--TESTIMONIAL 4 -->
+                        
+                          <!--END OF TESTIMONIAL 4 -->
+                          <!--TESTIMONIAL 5 -->
+                       
+                          <!--END OF TESTIMONIAL 5 -->
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </section>
+                  <footer
+                  class="text-center text-lg-start text-white"
+                  style="background-color: #4d4541"
+                  >
+            <!-- Grid container -->
+            <div class="container-fluid">
+              <!-- Section: Links -->
+              <section class="">
+                <!--Grid row-->
+                <div class="row mb-4">
+                  <!-- Grid column -->
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 Terms">
+                    <h6 class="text-uppercase mb-4 font-weight-bold Terms-heading">
+                      Terms & conditions
+                    </h6>
+                    <p class="foot">
+                        If you do not agree with all of these terms of use, then you are expressly prohibited from using eliteclicks and you must discontinue use immediately.....<a class="read" href="#modal-10" class="link">Read more</a>
+                       
+                   <div data-ml-modal id="modal-10">
+                      <a href="#!" class="modal-overlay"></a>
+                      <div class="modal-dialog modal-dialog-lg">
+                      <a href="#!" class="modal-close">&times;</a>
+                           <h3 class="terms-heading">Terms & conditions</h3>
+      <div class="modal-content newspaper">
+       <b>AGREEMENT TO TERMS </b>
+                           These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and ("Company," "we," "us," or "our"), concerning your access to and use of the website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, "EliteCLICKS"). You agree that by accessing EliteCLICKS, you have read, understood, and agreed to be bound by all these Terms of Use. IF YOU DO NOT AGREE WITH ALL OF THESE TERMS OF USE, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING ELITECLICKS AND YOU MUST DISCONTINUE USE IMMEDIATELY. 
+                           Supplemental terms and conditions or documents that may be posted on EliteCLICKS from time to time are hereby expressly incorporated herein by reference. We reserve the right, in our sole discretion, to make changes or modifications to these Terms of Use at any time and for any reason. We will alert you about any changes by updating the "Last updated" date of these Terms of Use, and you waive any right to receive specific notice of each such change. Please ensure that you check the applicable Terms every time you use our EliteCLICKS so that you understand which Terms apply. You will be subject to and will be deemed to have been made aware of and to have accepted, the changes in any revised Terms of Use by your continued use of EliteCLICKS after the date such revised Terms of Use are posted. 
+                          
+                           The information provided on EliteCLICKS is not intended for distribution to or use by any person or entity in any jurisdiction or country where such distribution or use would be contrary to law or regulation or which would subject us to any registration requirement within such jurisdiction or country. Accordingly, those persons who choose to access EliteCLICKS from other locations do so on their own initiative and are solely responsible for compliance with local laws, if and to the extent local laws are applicable. 
+              <br>
+              <br> 
+                           <b> USER DATA</b> 
+                           We will maintain certain data that you transmit to EliteCLICKS for the purpose of managing the performance of its website and application, as well as data relating to your use of EliteCLICKS. Although we perform regular routine backups of data, you are solely responsible for all data that you transmit or that relates to any activity you have undertaken using EliteCLICKS. You agree that we shall have no liability to you for any loss or corruption of any such data, and you hereby waive any right of action against us arising from any such loss or corruption of such data. 
+              
+                           <br>  
+                           <br>        
+                               <b> PROHIBITED ACTIVITIES </b>
+                          You may not access or use EliteCLICKS for any purpose other than that for which we make EliteCLICKS available. EliteCLICKS may not be used in connection with any commercial endeavors except those that are specifically endorsed or approved by us. 
+                             As a user of EliteCLICKS, you agree not to: 
+                          	Systematically retrieve data or other content from EliteCLICKS to create or compile, directly or indirectly, a collection, compilation, database, or directory without written permission from us. 
+                          	Trick, defraud, or mislead us and other users, especially in any attempt to learn sensitive account information such as user passwords. 
+                          	Circumvent, disable, or otherwise interfere with security-related features of EliteCLICKS, including features that prevent or restrict the use or copying of any Content or enforce limitations on the use of EliteCLICKS and/or the Content contained therein. 
+                          	Disparage, tarnish, or otherwise harm, in our opinion, us and/or EliteCLICKS. 
+                          	Use any information obtained from EliteCLICKS to harass, abuse, or harm another person. 
+                          	Make improper use of our support services or submit false reports of abuse or misconduct. 
+                          	Use EliteCLICKS in a manner inconsistent with any applicable laws or regulations. 
+                          	Engage in unauthorized framing of or linking to EliteCLICKS. 
+                          	Upload or transmit (or attempt to upload or to transmit) viruses, Trojan horses, or other material, including excessive use of capital letters and spamming (continuous posting of repetitive text), that interferes with any party's uninterrupted use and enjoyment of EliteCLICKS or modifies, impairs, disrupts, alters, or interferes with the use, features, functions, operation, or maintenance of EliteCLICKS. 
+                          	Engage in any automated use of the system, such as using scripts to send comments or messages, or using any data mining, robots, or similar data gathering and extraction tools. 
+                          	Delete the copyright or other proprietary rights notice from any content. 
+                          	Attempt to impersonate another user or person or use the username of another user. 
+                          	Upload or transmit (or attempt to upload or to transmit) any material that acts as a passive or active information collection or transmission mechanism, including without limitation, clear graphics interchange formats ("gifs"), 1 xl pixels, web bugs, cookies, or other similar devices (sometimes referred to as "spyware" or "passive collection mechanisms" or "pcms"). 
+                          	Interfere with, disrupt, or create an undue burden on EliteCLICKS or the networks or services connected to EliteCLICKS. • Harass, annoy, intimidate, or threaten any of our employees or agents engaged in providing any portion of EliteCLICKS to you. 
+                          	Attempt to bypass any measures of EliteCLICKS designed to prevent or restrict access to EliteCLICKS, or any portion of EliteCLICKS. 
+                          	Copy or adapt EliteCLICKS’ software, including but not limited to Flash, PHP, HTML, JavaScript, or other code. 
+                          	Except as permitted by applicable law, decipher, decompile, disassemble, or reverse engineer any of the software comprising or in any way making up a part of EliteCLICKS. 
+                          	Except as may be the result of standard search engine or Internet browser usage, use, launch, develop, or distribute any automated system, including without limitation, any spider, robot, cheat utility, scraper, or offline reader that accesses EliteCLICKS, or using or launching any unauthorized script or other software. • Use a buying agent or purchasing agent to make purchases on EliteCLICKS. 
+                          	Make any unauthorized use of EliteCLICKS, including collecting usernames and/or email addresses of users by electronic or other means for the purpose of sending unsolicited email, or creating user accounts by automated means or under false pretenses. 
+                          	Use EliteCLICKS as part of any effort to compete with us or otherwise use EliteCLICKS and/or the Content for any revenue-generating endeavour or commercial enterprise. 
+                          <br>  
+                           <br> 
+                        <b> MODIFICATIONS AND INTERRUPTIONS </b>
+                          We reserve the right to change, modify, or remove the contents of EliteCLICKS at any time or for any reason at our sole discretion without notice. However, we have no obligation to update any information on EliteCLICKS. We also reserve the right to modify or discontinue all or part of EliteCLICKS without notice at any time. We will not be liable to you or any third party for any modification, price change, suspension, or discontinuance of EliteCLICKS. 
+                          We cannot guarantee EliteCLICKS will be always available. We may experience hardware, software, or other problems or need to perform maintenance related to EliteCLICKS, resulting in interruptions, delays, or errors. We reserve the right to change, revise, update, suspend, discontinue, or otherwise modify EliteCLICKS at any time or for any reason without notice to you. You agree that we have no liability whatsoever for any loss, damage, or inconvenience caused by your inability to access or use EliteCLICKS during any downtime or discontinuance of EliteCLICKS. Nothing in these Terms of Use will be construed to obligate us to maintain and support the EliteCLICKS or to supply any corrections, updates, or releases in connection therewith. 
+                          <br>  
+                          <br> 
+                        <b> INDEMNIFICATION </b>
+                          You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, and all of our respective officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys' fees and expenses, made by any third party due to or arising out of: (1) use of EliteCLICKS; (2) breach of these Terms of Use; (3) any breach of your representations and warranties set forth in these Terms of Use; (4) your violation of the rights of a third party, including but not limited to intellectual property rights; or (5) any overt harmful act toward any other user of EliteCLICKS with whom you connected via the website or its application. Notwithstanding the foregoing, we reserve the right, at your expense, to assume the exclusive defense and control of any matter for which you are required to indemnify us, and you agree to cooperate, at your expense, with our defense of such claims. We will use reasonable efforts to notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it. 
+                          <br>  
+                          <br> 
+                          <b> SUBMISSIONS </b>
+                          You acknowledge and agree that any questions, comments, suggestions, ideas, feedback, or other information regarding EliteCLICKS ("Submissions") provided by you to us are non-confidential and shall become our sole property. We shall own exclusive rights, including all intellectual property rights, and shall be entitled to the unrestricted use and dissemination of these Submissions for any lawful purpose, commercial or otherwise, without acknowledgment or compensation to you. You hereby waive all moral rights to any such Submissions, and you hereby warrant that any such Submissions are original with you or that you have the right to submit such Submissions. You agree there shall be no recourse against us for any alleged or actual infringement or misappropriation of any proprietary right in your Submissions. 
+  
+      </div>
+    </div>
+  </div>
+  
+  
+                    </p>
+                  </div>
+                  <!-- Grid column -->
+                  <hr class="w-100 clearfix d-md-none" />
+                  <!-- Grid column -->
+                  <!-- <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 faq-footer">
+                    <h6 class="text-uppercase mb-4 font-weight-bold ">FAQ</h6>
+                    <p>
+                      <a class="text-white">MDBootstrap</a>
+                    </p>
+                    <p>
+                      <a class="text-white">MDWordPress</a>
+                    </p>
+                    <p>
+                      <a class="text-white">BrandFlow</a>
+                    </p>
+                    <p>
+                      <a class="text-white">Bootstrap Angular</a>
+                    </p>
+                  </div> -->
+                  <!-- Grid column -->
+                  <hr class="w-100 clearfix d-md-none" />
+                  <!-- Grid column -->
+                  <hr class="w-100 clearfix d-md-none" />
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3   contact-footer">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                    <!-- <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p> -->
+                    <p><i class="fas fa-envelope mr-3"></i>eliteclickstech@gmail.com</p>
+                    <!-- <p> <a class="tel"  href="/">
+                      Landline:&nbsp; +914442269050;
+                    </a></p> -->
+                  
+                  </div>
+                  <!-- Grid column -->
+                  <!-- Grid column -->
+                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3 ">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Follow us</h6>
+                    <div class="row footer-social">
+                    <a href="#" class="fa"><img src="/images/facebook.png" alt="" class="facebook"></a>
+                    <a href="#" class="fa"><img src="/images/insta.png" alt="" class="insta"></a>
+                  </div>
+                    <!-- Facebook
+                    
+                       
+                    
+                    
+                  </div>
+                </div>
+                <!--Grid row-->
+              </section>
+              <!-- Section: Links -->
+            </div>
+            <!-- Grid container -->
+            <!-- Copyright -->
+            <div
+                 class="text-center p-3"
+                 style="background-color: rgba(0, 0, 0, 0.2)"
+                 >
+              © 2020 Copyright:
+              <a class="text-white" href="http://tourin.eliteclicksapp.com/"
+              >tourin.eliteclicksapp.com</a
+             >
+            </div>
+            <!-- Copyright -->
+          </footer>
+<!-- Footer -->
+
+
+
+<!-- End of .container -->
+
+        <!-- Remove the container if you want to extend the Footer to full width. -->
+
+        <button class="open-button" onclick="openForm()"><i class="fas fa-headset"></i></button>
+
+        <div class="chat-popup" id="myForm">
+          <form action="/action_page.php" class="form-container">
+            <h3 class="chat-bot">Ask Us</h3>
+            <div class="input-box">
+              <!-- <label for="email">Email:</label> -->
+              <input type="text" id="inputmail" placeholder="Enter your email" class="email-input" />
+            </div>
+            <div class="input-box message-box">
+              <textarea
+                id="body"
+                name="body"
+                placeholder="Write something.."
+                style="height: 20px;"
+              ></textarea>
+            </div>
+            <div class="send-cancel">
+            <button type="button" class="btn cancel" onclick="sendEmail()"><i class="fas fa-paper-plane"></i></button>
+            <a class="read1" href="faq.html" >FAQ</a>
+            <button type="button" class="btn  close-btn" onclick="closeForm()"><i class="fas fa-times-circle"></i></button>
+      
+
+
+            </p>
+          </div>
+            
+            </div>
+            <button type="button" class="btn  close-btn" onclick="closeForm()"><i class="fas fa-times-circle"></i></button>
+          </form>
+        </div>    
+</section>
+<script>
+  $(function () {
+ $(document).scroll(function () {
+   var $nav = $(".navbar");
+   $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+ });
+});
+
+$(document).ready(function($) {
+        		//  TESTIMONIALS CAROUSEL HOOK
+		        $('#customers-testimonials').owlCarousel({
+		            loop: true,
+		            center: true,
+		            items: 3,
+		            margin: 0,
+		            autoplay: true,
+		            dots:true,
+		            autoplayTimeout: 8500,
+		            smartSpeed: 450,
+		            responsive: {
+		              0: {
+		                items: 1
+		              },
+		              768: {
+		                items: 2
+		              },
+		              1170: {
+		                items: 3
+		              }
+		            }
+		        });
+        	});
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+          
+  </script>
+  
+  </body>  
+  </html>
+      
